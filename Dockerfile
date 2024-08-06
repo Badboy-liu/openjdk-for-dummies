@@ -157,5 +157,6 @@ RUN true \
     && chmod o+w -R $JDK_DIR
 
 USER $PROJECTOR_USER_NAME
-
+EXPOSE 8887
+CMD ["echo", "-javaagent:/home/resource/jetbra/ja-netfilter.jar=jetbrains", ">>", "/projector/ide/bin/clion64.vmoptions"]
 CMD ["bash", "-c", "/run.sh"]
